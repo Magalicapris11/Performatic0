@@ -9,7 +9,7 @@ let indiceLetra = 0;
 let anteriorCuadro = [];
 
 function preload() {
-  imgFondo = loadImage('img/inicio.jpg');
+  imgFondo = loadImage('img/inicio.JPG');
   
   sonidoFondo = loadSound('sonidos/tele.sin.senal.mp3'); 
 }
