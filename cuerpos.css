@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Chakra Petch", sans-serif;;
+}
+
+/* CONTENEDOR GENERAL */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CUADRO SUPERIOR */
+.top-box {
+  width: 100%;
+  height: 60%;
+  background: black;
+  overflow: hidden;
+  position: relative;
+
+  /* Modificado para que el título se ubique arriba y las imágenes abajo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 10px 0; 
+}
+
+/* NUEVO: Estilos para el título */
+.main-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-align: center;
+
+ 
+}
+
+/* NUEVO: Contenedor de las imágenes de arriba */
+.images-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 80%; /* Le da un espacio controlado para que no empujen el título */
+}
+
+/* Modificado el selector para apuntar a las imágenes dentro del wrapper */
+.images-wrapper img {
+  max-height: 100%;
+  max-width: 45%;
+  object-fit: cover;
+}
+
+/* PARTE INFERIOR */
+.bottom-section {
+  width: 100%;
+  height: 40%;
+  display: flex;
+}
+
+/* IMAGEN IZQUIERDA */
+.left-box {
+  width: 50%;
+  height: 100%;
+  background: #222;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.left-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXTO DERECHA */
+.right-box {
+  width: 50%;
+  height: 100%;
+  background: black;
+  color: white;
+
+  padding: 30px;
+  overflow-y: auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+/* ==========================================================
+   CONTENEDOR GLOBAL DEL MENÚ
+   ========================================================== */
+.menu-desparramado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Evita que el contenedor tape los formularios o botones de tu cuenta */
+  z-index: 9999;        /* Asegura que los links floten por encima de todo */
+}
+
+/* ==========================================================
+   ESTILO BASE DE LOS LINKS (Estética e inicio de animación)
+   ========================================================== */
+.link-item {
+  position: absolute !important; /* Rompe el flujo para poder esparcirlos por la pantalla */
+  pointer-events: auto;          /* Devuelve el click a los botones para que funcionen */
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-family: sans-serif;
+  font-weight: bold;
+  background-color: #000000;
+  padding: 6px 12px;
+  border: 1px solid #ffffff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  
+  /* Conexión con la animación de movimiento */
+  animation-name: flotar;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
+
+/* ==========================================================
+   ANIMACIÓN DE MOVIMIENTO ORGÁNICO (Keyframes)
+   ========================================================== */
+@keyframes flotar {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(15px, -20px); /* Dirección del balanceo (X, Y) */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ==========================================================
+   COORDIENADAS DE DESPARRAMO Y VELOCIDADES INDEPENDIENTES
+   ========================================================== */
+.pos-1 { 
+  top: 12% !important; 
+  left: 8% !important; 
+  animation-duration: 0.5s; 
+}
+
+.pos-2 { 
+  top: 22% !important; 
+  right: 12% !important; 
+  animation-duration: 8s; 
+  animation-delay: 1s; /* Arranca desfasado */
+}
+
+.pos-3 { 
+  top: 48% !important; 
+  left: 6% !important; 
+  animation-duration: 5s; 
+}
+
+.pos-4 { 
+  bottom: 18% !important; 
+  left: 15% !important; 
+  animation-duration: 0.2s; 
+  animation-delay: 0.2s; 
+}
+
+.pos-5 { 
+  bottom: 22% !important; 
+  right: 8% !important; 
+  animation-duration: 9s; 
+}
+
+.pos-6 { 
+  top: 38% !important; 
+  right: 28% !important; 
+  animation-duration: 4.5s; 
+  animation-delay: 0.5s; 
+}
+.pos-7 { 
+  top: 18% !important; 
+  right: 10% !important; 
+  animation-duration: 0.2s; 
+  animation-delay: 0.5s; 
+}
+.pos-8 { 
+  top: 55% !important; 
+  right: 10% !important; 
+  animation-duration: 0.5s; 
+  animation-delay: 0.5s; 
+}
+.pos-9 { 
+  top: 15% !important; 
+  right: 10% !important; 
+  animation-duration: 1.5s; 
+  animation-delay: 0.5s; 
+}

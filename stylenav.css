@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-image: url('img/fondo.nav.png');
+}
+
+.fondo {
+  width: 100%;        
+  height: 100vh;      
+  position: relative; 
+  display: flex;
+  flex-direction: column;    /* Alinea el título arriba del contenedor */
+  justify-content: center;   /* Centra verticalmente todo el bloque */
+  align-items: center;       /* Centra horizontalmente todo el bloque */
+  gap: 20px;                 /* Espacio de separación entre el título y el div */
+}
+
+/* Estilo para el título usando la fuente que importaste */
+.titulo-app {
+  font-family: 'Chakra Petch', sans-serif;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* El contenedor maestro que define el tamaño para todo */
+.contenedor-todas {
+  position: relative; 
+  width: 70%;                  
+  max-width: 700px;            
+  aspect-ratio: 3 / 2;         
+  overflow: hidden;   
+  
+  border: 1px solid #ffffff;      
+  outline: 4px solid #161616;     
+  outline-offset: -14px; 
+}
+
+/* Aplica a absolutamente TODAS las imágenes del contenedor */
+.todas {
+  position: absolute; /* Se enciman una detrás de otra */
+  top: 0;
+  left: 0;
+  width: 100%;        
+  height: 100%;       
+  object-fit: cover;  /* Forzamos a que todas encuadren idéntico */
+  display: block;
+}
+
+/* Ocultamos las siluetas al inicio */
+.silueta {
+  opacity: 0;
+  transition: opacity 0.1s ease; /* Un leve parpadeo/glitch al aparecer */
+  z-index: 2;
+}
+
+/* Clase que p5.js activará dinámicamente para mostrar la silueta elegida */
+.mostrar-silueta {
+  opacity: 1;
+}
+
+/* Capa interactiva de p5 encima de las fotos */
+#p5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; 
+  cursor: pointer;
+}
+/* Estilo para la caja de texto inferior */
+.caja-texto {
+  background-color: #161616a0;
+  width: 70%;                  /* Mismo ancho relativo que el contenedor de imágenes */
+  max-width: 700px;            /* Mismo ancho máximo para mantener la simetría */
+  font-family: 'Chakra Petch', sans-serif;
+  color: #cccccc;              /* Un tono gris claro para que sea legible pero no compita con el título */
+  font-size: 0.95rem;          /* Tamaño de letra cómodo para leer */
+  line-height: 1.5;            /* Interlineado para mejorar la lectura */
+  text-align: justify;         /* Justificado para darle un bloque limpio y estructurado */
+  margin-top: 5px;             /* Ajuste fino de espacio extra arriba si lo necesitás */
+}
